@@ -1,11 +1,12 @@
 
 import './App.css'
+import { SliderDrawer } from './components/SliderDrawer'
 
-function App(){
+const App: React.FC = () => {
 
   return (
-    <>
-     
+    <>  
+      <SliderDrawer/>
     </>
   )
 }
