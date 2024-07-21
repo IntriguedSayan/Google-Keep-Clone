@@ -1,4 +1,3 @@
-// Sidebar.tsx
 import React, { useState } from 'react';
 import './SliderDrawer.css';
 import { FaHome, FaInfo, FaBell, FaTag, FaPen, FaDownload, FaTrash } from 'react-icons/fa';
