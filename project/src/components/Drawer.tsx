@@ -1,58 +1,70 @@
-import React from "react";
-import {
-  FaHome,
-  FaInfo,
-  FaBell,
-  FaTag,
-  FaDownload,
-  FaBars,
-} from "react-icons/fa";
+import React, { useState } from "react";
+import { FaHome, FaBell, FaTag, FaBars, FaPen, FaTrash } from "react-icons/fa";
 import "./Drawer.css";
-interface DrawerProps{
-    children: React.FC
+import { NavLink } from "react-router-dom";
+interface DrawerProps {
+  children: React.ReactElement;
 }
 const menuItems = [
   {
-    name: "Home",
+    name: "Notes",
+    path: "/",
     icon: <FaHome />,
   },
   {
-    name: "Notifications",
+    name: "Reminders",
+    path: "/reminders",
     icon: <FaBell />,
   },
   {
-    name: "About",
+    name: "Edit Labels",
+    path: "/editlabels",
+    icon: <FaPen />,
+  },
+  {
+    name: "Bin",
+    path: "/bin",
+    icon: <FaTrash />,
+  },
+  {
+    name: "Archive",
+    path: "/archive",
     icon: <FaTag />,
-  },
-  {
-    name: "Edit",
-    icon: <FaInfo />,
-  },
-  {
-    name: "Download",
-    icon: <FaDownload />,
   },
 ];
 
-const Drawer: React.FC = ({children}:DrawerProps) => {
+const Drawer: React.FC<DrawerProps> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="container">
-      <div className="sidebar">
+    <>
+      <div className="navbar">
         <div className="top_section">
-          <h1 className="logo">Logo</h1>
           <div className="bars">
-            <FaBars />
+            <FaBars onClick={toggleDrawer} />
           </div>
         </div>
-        {menuItems.map((elem, index) => (
-          <div className="link" key={index}>
-            <div className="icon">{elem.icon}</div>
-            <div className="link_text">{elem.name}</div>
-          </div>
-        ))}
       </div>
-      <main>{children}</main>
-    </div>
+      <div className="container">
+        <div style={{ width: isOpen ? "18rem" : "3.2rem" }} className="sidebar">
+          {menuItems.map((elem, index) => (
+            <NavLink to={elem.path} className="link" key={index} activeclassName={"active"}>
+              <div className="icon">{elem.icon}</div>
+              <div
+                style={{ display: isOpen ? "block" : "none" }}
+                className="link_text"
+              >
+                {elem.name}
+              </div>
+            </NavLink>
+          ))}
+        </div>
+        <main>{children}</main>
+      </div>
+    </>
   );
 };
 
