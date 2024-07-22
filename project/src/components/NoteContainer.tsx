@@ -35,6 +35,16 @@ export const notes = [
       title: "Office hour:",
       content: "Step 1: Student will fill this form if the student shows up. It should be filled in presence of IA\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep 2: IA will fill this form if the student didn't show up (Same form as Step 1)\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep 3: E/C will send the feedback form to student after the office hour conduction\nStep 4: IA will share the Adhoc request form with...",
     },
+    {
+      id: 7,
+      title: "Office hour:",
+      content: "Step 1: Student will fill this form if the student shows up. It should be filled in presence of IA\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep 2: IA will fill this form if the student didn't show up (Same form as Step 1)\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep ",
+    },
+    {
+      id: 8,
+      title: "Office hour:",
+      content: "Step 1: Student will fill this form if the student shows up. It should be filled in presence of IA\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep ",
+    },
   ];
   
 const NoteContainer:React.FC = () => {

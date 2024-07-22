@@ -10,7 +10,7 @@ interface SingleNoteProps {
 const SingleNote:React.FC<SingleNoteProps> = ({title, content}) => {
   return (
     <div className='single_note'>
-        <h3>{title}</h3>
+        <h3 className='title-note'>{title}</h3>
         <p>{content}</p>
     </div>
   )
