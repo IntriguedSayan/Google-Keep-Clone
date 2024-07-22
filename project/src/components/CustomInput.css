@@ -1,0 +1,43 @@
+.note-input-container {
+  margin: auto;
+  display: flex;
+  width: 33rem;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #555;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0.85rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.note-input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.note-input::placeholder {
+  color: #aaa;
+}
+
+.note-icons {
+  display: flex;
+  align-items: center;
+  gap: 0rem 1.3rem;
+}
+
+.icon {
+  color: #888;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: #fff;
+}

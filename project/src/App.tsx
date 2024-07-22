@@ -1,11 +1,13 @@
 
-import './App.css'
+import './App.css';
+import { AllRoutes } from './Routes/AllRoutes';
 
-function App(){
+
+const App: React.FC = () => {
 
   return (
-    <>
-     
+    <>  
+      <AllRoutes/>
     </>
   )
 }
