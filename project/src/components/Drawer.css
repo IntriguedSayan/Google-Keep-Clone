@@ -4,9 +4,10 @@
 }
 
 .container {
+  border: 2px solid rebeccapurple;
   display: flex;
 }
-main {
+main {  
   width: 100%;
   padding: 2rem;
 }
@@ -15,7 +16,7 @@ main {
   background: #202124;
   color: #fff;
   height: 100vh;
-  width: 20rem;
+  width: 30rem;
   transition: all 0.5s;
 }
 
@@ -40,15 +41,18 @@ main {
   padding: 0.8rem 1rem;
   transition: all 0.5s;
   gap: 1rem;
+  text-decoration: none;
 }
 
 .active {
   background-color: #41331c;
-  border-top-right-radius: 18%;
-  border-bottom-right-radius: 18%;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 .link:hover {
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
   background: rgba(255, 255, 255, 0.6);
   color: #e8eaed;
   transition: all 0.5s;
@@ -57,4 +61,6 @@ main {
 .icon,
 .link_text {
   font-size: 1.2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

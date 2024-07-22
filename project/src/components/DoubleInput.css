@@ -1,0 +1,58 @@
+.DoubleInput_container {
+  /* border: 1px solid red; */
+  width: 33rem;
+  margin: auto;
+}
+
+.top_input {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0.85rem;
+}
+.bottom_input {
+  /* border: 1px solid red; */
+  display: flex;
+}
+.top_note_input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  outline: none;
+  font-size: 1rem;
+  padding: 0 10px;
+  margin-left: -0.8rem;
+}
+.bottom_note_input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  outline: none;
+  font-size: 0.9rem;
+  padding: 0 10px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.toolbar-icon {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.toolbar-close {
+  margin-left: auto;
+  cursor: pointer;
+}
