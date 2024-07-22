@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CustomInput } from "../components/CustomInput";
 import { DoubleInput } from "../components/DoubleInput";
+import { NoteContainer } from "../components/NoteContainer";
 
 const Notes: React.FC = () => {
   const [clicked, setClicked] = useState<boolean>(false);
@@ -19,7 +20,7 @@ const Notes: React.FC = () => {
         )}
       </div>
       <div>
-        
+        <NoteContainer/>
       </div>
     </>
   );

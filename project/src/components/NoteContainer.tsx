@@ -2,6 +2,7 @@ import React from 'react'
 import { SingleNote } from './SingleNote';
 
 // notesData.js
+import "./NotesContainer.css";
 
 export const notes = [
     {

@@ -1,18 +1,22 @@
 .single_note {
-    background-color: #2c2c2c;
-    color: #fff;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 20rem;
-  }
-  
-  .single_note h3 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  
-  .single_note p {
-    margin: 0.5rem 0 0;
-    white-space: pre-wrap; 
-  }
+  border: 3px solid red;
+  background-color: transparent;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 15rem;
+}
+
+.single_note h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.single_note p {
+  margin: 0.5rem 0 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

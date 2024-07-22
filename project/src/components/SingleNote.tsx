@@ -9,9 +9,9 @@ interface SingleNoteProps {
 
 const SingleNote:React.FC<SingleNoteProps> = ({title, content}) => {
   return (
-    <div className='single-note'>
+    <div className='single_note'>
         <h3>{title}</h3>
-        <h4>{content}</h4>
+        <p>{content}</p>
     </div>
   )
 }
