@@ -10,17 +10,28 @@
   overflow: hidden;
   word-wrap: break-word;
 }
-.bin-icon {
-  margin: auto;
+.title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;;
+}
+.single-note-icons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2%;
+}
+.bin-icon:hover {
+  cursor: pointer;
 }
 .bin-icon-container {
-  margin-top: 5%;
+  margin-top: 3%;
   display: flex;
-  align-content: flex-end;
 }
 
 .title-note {
   margin: 0;
+  width: 90%;
 }
 
 .single_note p {

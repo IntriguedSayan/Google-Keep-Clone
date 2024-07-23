@@ -2,12 +2,13 @@ import { notes } from "../../components/NoteContainer";
 // import { NoteActionType } from "./action_type";
 
 import { NoteActionTypes } from "./action";
-import { ADD_NOTE, DELETE_NOTE, GET_NOTE } from "./action_type";
+import { ADD_NOTE, DELETE_NOTE, GET_NOTE, TOGGLE_PIN_NOTE } from "./action_type";
 
 export interface NoteType{
     id: string | number;
     title?: string;
     content: string;
+    isPinned: boolean;
 }
 
 export interface NotesState{
@@ -47,6 +48,14 @@ export const notesReducer = (state:NotesState=initState, action:NoteActionTypes)
                 isLoading: false,
                 isError: false,
                 notes: state.notes.filter((note)=>note.id !== action.payload)
+            }
+        case TOGGLE_PIN_NOTE:
+            return{
+                ...state,
+                isLoading: false,
+                isError: false,
+                notes: state.notes.map((note)=> note.id === action.payload ? {...note, isPinned: !note.isPinned} : note)
+
             }
         default:
             return state;

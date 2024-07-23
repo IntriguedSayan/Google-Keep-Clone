@@ -14,7 +14,7 @@ const Notes: React.FC = () => {
 
   const toggle = () => {
     setClicked(!clicked);
-    const newInputState = {...inputState,id:notesFromRedux.length+1}
+    const newInputState = {...inputState,id:notesFromRedux.length+1,isPinned:false}
     dispatch(addNote(newInputState));
     dispatch(getNotes());
     setInputState({title:"",content:""});

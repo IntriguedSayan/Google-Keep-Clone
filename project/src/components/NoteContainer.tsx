@@ -9,50 +9,58 @@ export const notes = [
   {
     id: 1,
     title: "batch -> 18 , NEM201",
+    isPinned: false,
     content:
-      "Masai logo=>\nhttps://drive.google.com/file/d/1JxN3nHrSkW3sTWMJQmeYeL9bCxBOgWoUb/view",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum fugit impedit nostrum distinctio optio magni",
   },
   {
     id: 2,
-    title: "REACT_APP_UPLOAD_PRESET_NAME=huzzi_image_bucket",
+    title: "REACT_APP_UPLOAD_PRESET_NAME image_bucket",
+    isPinned: false,
     content:
-      "REACT_APP_CLOUD_NAME=dv7zbk01d\nREACT_APP_BACKEND_URL=http://localhost:8080",
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas enim suscipit quasi magni animi quae sunt, blanditiis rem ipsam eos rerum itaque nobis saepe hic magnam officia labore beatae debitis!',
   },
   {
     id: 3,
     title: "Chakratemplates",
+    isPinned: false,
     content: "Empty note",
   },
   {
     id: 4,
     title: "Human Readable Time Ended Description",
+    isPinned: false,
     content:
       "Given number of minutes, convert it into human readable form.\nExample:\n130 becomes 2hrs 10minutes\n110 becomes 1hr 50minutes\n120 becomes 2hrs 00minutes\nNote the exact format of output...",
   },
   {
     id: 5,
     title:
-      "GOOGLE_CLIENT_ID=405727860421-a03ua7p4eop80sgk91r56s69v4ccleqn.apps.googleusercontent.com",
+      "405727860421-a03ua7p4eop80sgk91r56s69v4ccleqn.apps.googleusercontent.com",
+    isPinned: false,
     content:
-      "GOOGLE_CLIENT_SECRET=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\nCOOKIE_SECRET_KEY=myCookieSecretKey\nJWT_SECRET_KEY=secret_salt\nENV=production\nDB_USERNAME=masai\nDB_PASSWORD=masaishcool\nPORT=8080",
+      'Lorem ipsum nihil dolorem fugiat autem odit. Corporis molestiae quia voluptatum minus, et dolores qui labore cumque reprehenderit numquam!',
   },
   {
     id: 6,
     title: "Office hour:",
+    isPinned: true,
     content:
-      "Step 1: Student will fill this form if the student shows up. It should be filled in presence of IA\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep 2: IA will fill this form if the student didn't show up (Same form as Step 1)\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep 3: E/C will send the feedback form to student after the office hour conduction\nStep 4: IA will share the Adhoc request form with...",
+      "Step 1: Student will fill this form if the student shows up. It should be filled in presence of 3: E/C will send the feedback form to student after the office hour conduction\nStep 4: IA will share the Adhoc request form with...",
   },
   {
     id: 7,
     title: "Office hour:",
+    isPinned: true,
     content:
-      "Step 1: Student will fill this form if the student shows up. It should be filled in presence of IA\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep 2: IA will fill this form if the student didn't show up (Same form as Step 1)\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep ",
+      "Step 1: Student will fill this form if the student shows up. It should be filled in presence of",
   },
   {
     id: 8,
     title: "Office hour:",
+    isPinned: true,
     content:
-      "Step 1: Student will fill this form if the student shows up. It should be filled in presence of IA\nhttps://forms.gle/3LUSYhpzYHCRMWCF8\nStep ",
+      "Step 1: Student will fill this form if the student shows up. It should be filled in presence of IA",
   },
 ];
 
@@ -64,17 +72,39 @@ const NoteContainer: React.FC = () => {
     dispatch(getNotes());
   }, []);
 
+
   return (
-    <div className="notes_container">
-      {notesFromRedux?.map((elem) => (
-        <SingleNote
-          key={elem.id}
-          id={elem.id}
-          title={elem.title ? elem.title : ""}
-          content={elem.content}
-        />
-      ))}
-    </div>
+    <>
+      <div className="pinned">
+        {
+          notesFromRedux?.filter((note)=>(
+              note.isPinned === true
+          )).map((note)=>(
+              <SingleNote
+                key={note.id}
+                id={note.id}
+                title={note.title ? note.title : ""}
+                content={note.content}
+                isPinned={note.isPinned}
+              />
+          ))
+        }
+      </div>
+
+      <div className="notes_container">
+        {notesFromRedux?.filter((note)=>(
+            note.isPinned === false
+        )).map((elem) => (
+          <SingleNote
+            key={elem.id}
+            id={elem.id}
+            title={elem.title ? elem.title : ""}
+            content={elem.content}
+            isPinned={elem.isPinned}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
