@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { FaHome, FaBell, FaTag, FaBars, FaPen, FaTrash } from "react-icons/fa";
 import "./Drawer.css";
 import { NavLink } from "react-router-dom";
-import { Context } from "../context/SidebarContext";
 interface DrawerProps {
   children: React.ReactElement;
 }
@@ -35,7 +34,6 @@ const menuItems = [
 ];
 
 const Drawer: React.FC<DrawerProps> = ({ children }) => {
-  // const {isOpen, setIsOpen} = useContext(Context);
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -55,9 +53,8 @@ const Drawer: React.FC<DrawerProps> = ({ children }) => {
           {menuItems.map((elem, index) => (
             <NavLink
               to={elem.path}
-              className={({isActive})=> !isActive ? "link" : "link active"}
+              className={({ isActive }) => (!isActive ? "link" : "link active")}
               key={index}
-
             >
               <div className="icon">{elem.icon}</div>
               <div
