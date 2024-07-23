@@ -1,14 +1,22 @@
 .single_note {
-  border: 3px solid red;
+  border: 1px solid #e8eaed;
   background-color: transparent;
   color: #fff;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 12rem; 
-  height: fit-content; 
+  width: 12rem;
+  height: fit-content;
   overflow: hidden;
   word-wrap: break-word;
+}
+.bin-icon {
+  margin: auto;
+}
+.bin-icon-container {
+  margin-top: 5%;
+  display: flex;
+  align-content: flex-end;
 }
 
 .title-note {
@@ -17,6 +25,7 @@
 
 .single_note p {
   margin: 0.5rem 0 0;
-  white-space: pre-wrap; 
+  font-weight: 100;
+  white-space: pre-wrap;
   text-overflow: ellipsis;
 }

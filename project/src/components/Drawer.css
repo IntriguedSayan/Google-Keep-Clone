@@ -4,7 +4,6 @@
 }
 
 .container {
-  border: 2px solid rebeccapurple;
   display: flex;
 }
 main {  
@@ -47,6 +46,7 @@ main {
 .active {
   background-color: #41331c;
   border-top-right-radius: 2rem;
+  display: flex;
   border-bottom-right-radius: 2rem;
 }
 
