@@ -69,6 +69,7 @@ const NoteContainer: React.FC = () => {
       {notesFromRedux?.map((elem) => (
         <SingleNote
           key={elem.id}
+          id={elem.id}
           title={elem.title ? elem.title : ""}
           content={elem.content}
         />

@@ -2,10 +2,10 @@ import { notes } from "../../components/NoteContainer";
 // import { NoteActionType } from "./action_type";
 
 import { NoteActionTypes } from "./action";
-import { ADD_NOTE, GET_NOTE } from "./action_type";
+import { ADD_NOTE, DELETE_NOTE, GET_NOTE } from "./action_type";
 
 export interface NoteType{
-    id?: string | number;
+    id: string | number;
     title?: string;
     content: string;
 }
@@ -41,7 +41,13 @@ export const notesReducer = (state:NotesState=initState, action:NoteActionTypes)
                 isError: false,
                 notes: state.notes
             }
-
+        case DELETE_NOTE:
+            return{
+                ...state,
+                isLoading: false,
+                isError: false,
+                notes: state.notes.filter((note)=>note.id !== action.payload)
+            }
         default:
             return state;
     }

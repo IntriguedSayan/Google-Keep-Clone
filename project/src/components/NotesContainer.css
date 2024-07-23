@@ -1,8 +1,7 @@
 .notes_container {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap:1rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr); 
+  gap:0.5rem;   
   margin-top: 5%;
 }
