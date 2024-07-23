@@ -35,9 +35,8 @@ const menuItems = [
 ];
 
 const Drawer: React.FC<DrawerProps> = ({ children }) => {
-
-  const {isOpen, setIsOpen} = useContext(Context);
-
+  // const {isOpen, setIsOpen} = useContext(Context);
+  const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
@@ -54,7 +53,12 @@ const Drawer: React.FC<DrawerProps> = ({ children }) => {
       <div className="container">
         <div style={{ width: isOpen ? "30rem" : "3.2rem" }} className="sidebar">
           {menuItems.map((elem, index) => (
-            <NavLink to={elem.path} className="link" key={index} activeclassname={"active"}>
+            <NavLink
+              to={elem.path}
+              className={({isActive})=> !isActive ? "link" : "link active"}
+              key={index}
+
+            >
               <div className="icon">{elem.icon}</div>
               <div
                 style={{ display: isOpen ? "block" : "none" }}

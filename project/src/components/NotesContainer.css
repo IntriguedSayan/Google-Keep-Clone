@@ -1,6 +1,8 @@
 .notes_container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
+  justify-content: center;
+  gap:1rem;
+  margin-top: 5%;
 }
